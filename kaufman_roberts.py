@@ -11,7 +11,7 @@ def calc_x(V, M, a, t):
     x = [1] * (V + 1)
     for n in range(1, V+1):
         sum = 0
-        for i in range(1, M):
+        for i in range(0, M):
             if n >= t[i]:
                 sum += a[i] * t[i] * x[n - t[i]]
         x[n] = sum / n
@@ -28,7 +28,7 @@ def calc_pn(x, V, M, a, t):
     P[0] = calc_p0(x)
     for n in range(1, V+1):
         sum = 0
-        for i in range(1, M):
+        for i in range(0, M):
             if n >= t[i]:
                 sum += a[i] * t[i] * P[n - t[i]]
         P[n] = sum / n
